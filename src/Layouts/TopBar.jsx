@@ -7,8 +7,8 @@ import logo from '../assets/logo.jpg'
 
 export const TopBar = () => {
   return (
-    <>
-      <header className="w-full bg-[#E5FFF3] flex justify-between items-center px-6">
+    <div className="h-screen flex flex-col justify-stretch">
+      <header className="w-full bg-[#E5FFF3] flex justify-between items-center p-4">
         {/* LOGO */}
         <img className="h-[60px]" src={logo} alt="" />
         
@@ -17,7 +17,7 @@ export const TopBar = () => {
           {navLinks.map((link)=>(
             <NavLink 
                 className={({ isActive }) =>
-                  isActive ? "font-semibold text-[48px]" : "text-[48px]"
+                  isActive ? "font-semibold text-4xl" : "text-4xl"
                 }       
               key={link.id} 
               to={link.content}>{link.title}</NavLink>
@@ -26,7 +26,7 @@ export const TopBar = () => {
       </header>
       
       <Outlet />
-    </>
+    </div>
   )
 }
 

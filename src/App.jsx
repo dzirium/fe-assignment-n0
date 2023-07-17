@@ -4,12 +4,13 @@ import { createBrowserRouter , createRoutesFromElements , Route , RouterProvider
 import { TopBar } from './Layouts/TopBar'
 //pages
 import { Main , About , Contact } from './pages'
-
+//Loaders
+import { productsLoader } from './pages/Main'
 //router
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element = {<TopBar />} >
-      <Route index element = {<Main />}/>
+      <Route index element = {<Main />} loader={ productsLoader } />
       <Route path="about" element = {<About />}/>
       <Route path="contact" element = {<Contact />}/>
     </Route>

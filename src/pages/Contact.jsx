@@ -5,7 +5,7 @@ import {styles} from '../style'
 
 export const Contact = () => {
     return (
-      <div className="h-full w-full flex flex-col items-center justify-around">
+      <div className={`h-full ${styles.mainPage}`}>
           
           {/* TITLE */}
           <h1 className={styles.title}>Contact Us</h1>
@@ -25,7 +25,7 @@ export const Contact = () => {
               <p className={styles.largeText}>Name :</p>
               <input type="text" className={styles.input} />
               <p className={styles.largeText}>Message : </p>
-              <textarea name="message" className={`${styles.input} py-8`}></textarea>
+              <textarea name="message" className={`${styles.input} pb-10`}></textarea>
             </span>
 
            

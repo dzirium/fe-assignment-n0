@@ -1,11 +1,23 @@
 //react-router-dom
 import { useLoaderData , NavLink} from 'react-router-dom'
+//redux
+import { useDispatch } from 'react-redux';
+import { setProducts } from '../app/features/products/productsSlice'
 //styles
 import {styles} from '../style'
+import { useEffect } from 'react';
 
 export const Main = () => {
 
   const data = useLoaderData()
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    dispatch(
+      setProducts(data.products)
+      )
+      
+  },[])
   return (
     <div className={`space-y-4 ${styles.mainPage}`}>
           
@@ -18,6 +30,7 @@ export const Main = () => {
         {data.products.map((product)=>(
           <div key={product.id} className='bg-blue-300 relative rounded-b-3xl'>
             <img className='h-[150px] w-full' src={product.thumbnail} alt="" />
+            
             {/* DETAILS */}
             <div className='p-2 grid'>
               <h1 className={styles.largeText}>{product.title}</h1>
@@ -26,7 +39,7 @@ export const Main = () => {
               <span className='absolute top-1 right-1 w-[30px] rounded-xl bg-gray-200 text-center'>
                 <p>{product.rating}</p>
               </span>
-              <NavLink to={product.id} className='place-self-end hover:scale-105 hover:underline'>View Details</NavLink>
+              <NavLink to={`products/${product.id}`} className='place-self-end hover:scale-105 hover:underline'>View Details</NavLink>
             </div>
           </div>
         ))}

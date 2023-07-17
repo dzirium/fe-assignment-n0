@@ -3,7 +3,7 @@ import { createBrowserRouter , createRoutesFromElements , Route , RouterProvider
 //Layouts
 import { TopBar } from './Layouts/TopBar'
 //pages
-import { Main , About , Contact } from './pages'
+import { Main , About , Contact , ProductDetails } from './pages'
 //Loaders
 import { productsLoader } from './pages/Main'
 //router
@@ -13,6 +13,7 @@ const router = createBrowserRouter(
       <Route index element = {<Main />} loader={ productsLoader } />
       <Route path="about" element = {<About />}/>
       <Route path="contact" element = {<Contact />}/>
+      <Route path="products/:id" element = {<ProductDetails />} />
     </Route>
   )
 )

@@ -25,11 +25,11 @@ export const Main = () => {
       <h1 className={styles.title}>Our Selection</h1>
 
       {/* PRODUCTS */}
-      <div className='grid grid-cols-3 gap-6 w-[90%]'>
+      <div className='space-y-4 md:space-y-0 md:grid md:grid-cols-3 md:gap-6 w-[90%]'>
         
         {data.products.map((product)=>(
           <div key={product.id} className='bg-blue-300 relative rounded-b-3xl'>
-            <img className='h-[150px] w-full' src={product.thumbnail} alt="" />
+            <img className='h-[200px] md:h-[150px] w-full' src={product.thumbnail} alt="" />
             
             {/* DETAILS */}
             <div className='p-2 grid'>

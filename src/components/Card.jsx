@@ -22,7 +22,7 @@ export default function Card(props
       <div className="mt-4 px-5 pb-5">
         <div className="">
           <h5 className="text-xl tracking-tight text-start text-slate-900 ">
-            {props.perfumeBrand + props.perfumeTitle}
+            {props.perfumeBrand +" "+ props.perfumeTitle}
           </h5>
         </div>
         <div className="mt-2 mb-5 flex items-center justify-between">

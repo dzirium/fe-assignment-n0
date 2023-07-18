@@ -1,9 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 export default function Card(props) {
-  // console.log('this is from Card:')
-  // console.log(props.perfumeImg  )
-
+  // Simple card UI component to display the perfume //
   return (
     <div className="m-2 flex w-full max-w-xs flex-col rounded-lg border border-gray-100 bg-white shadow-md  ">
       <div className="relative mx-3 mt-3 flex h-40 overflow-hidden rounded-xl">
@@ -81,6 +79,7 @@ export default function Card(props) {
             </span>
           </div>
         </div>
+        {/*  Link to the dynamic URL for the corresponding perfume  */}
         <Link
           to={`/product/${props.perfumeId}`}
           className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"

@@ -3,6 +3,7 @@ import React from "react";
 export default function () {
   return (
     <>
+    {/* The form component for the ContactUs Page  */}
       <div className="flex flex-col w-auto mx-auto  ">
         <div className="text-2xl font-serif font-bold">
           Or send us a message at :

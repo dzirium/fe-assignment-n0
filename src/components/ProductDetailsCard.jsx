@@ -3,39 +3,37 @@ import { useParams } from "react-router-dom";
 import axios, * as others from "axios";
 
 export default function ProductDetailsCard() {
+  // getting the perfumeId to filter our fetched data
   const perfumeId = Number(Object.values(useParams())[0]);
   const [isLoading, setLoading] = useState(true);
   const [productDetailsList, setProductDetailsList] = useState({});
   const [productDetails, setProductDetails] = useState({});
   const perfumeAPI = "https://dummyjson.com/products/category/fragrances";
 
+  // in the mean time fetching the data again before implementing global state management 
   useEffect(() => {
     axios
       .get(perfumeAPI)
       .then((res) => {
         setLoading(false);
-        console.log(Object.values(res.data.products));
         setProductDetailsList(Object.values(res.data.products));
-        // console.log(productDetails)
-        // console.log("this is perfumeId :", perfumeId )
       })
       .catch((err) => console.log(err));
   }, []);
   useEffect(() => {
+    // Filtering the fetched data based on the perfume Id 
     if (Object.keys(productDetailsList).length !== 0) {
-      console.log("perfume Id is : ", perfumeId);
       const results = productDetailsList.filter((obj) => {
         return obj.id === perfumeId;
       });
       setProductDetails(results);
-      console.log("prehey:", productDetailsList);
-      console.log("hey : ", results);
     }
   }, [productDetailsList]);
-
+  // Simple loading screen 
   if (isLoading) {
     return <div className="App">Loading...</div>;
   }
+  // Making sure that the product details object is existant before rendering what's next 
   if (!isLoading && Object.keys(productDetails).length === 1) {
     return (
       <>

@@ -9,7 +9,7 @@ export default function ContactUs() {
       </div>
       <div className="w-auto mx-20 flex flex-row justify-between align-middle  ">
         <div className=" mx-auto">
-            <img className="max-w-lg max-h-96 rounded-xl " src="public\vecteezy_luxury-perfume-bottle-logo-design-illustration-for_9004047.jpg" alt="image description"/>
+            <img className="max-w-lg max-h-96 rounded-xl " src="src\assets\vecteezy_luxury-perfume-bottle-logo-design-illustration-for_9004047.jpg" alt="image description"/>
         </div>
         <div className="text-center mx-auto text-2xl w-auto font-serif flex items-center ">
                 <p>

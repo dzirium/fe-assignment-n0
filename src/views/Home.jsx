@@ -16,10 +16,10 @@ export default function Home() {
       })
       .catch((err) => console.log(err));
   }, []);
-  useEffect(() => {
-    console.log(perfumeList);
-    console.log("Break");
-  }, [perfumeList]);
+  // useEffect(() => {
+  //   console.log(perfumeList);
+  //   console.log("Break");
+  // }, [perfumeList]);
   if (isLoading) {
     return <div className="App">Loading...</div>;
   }

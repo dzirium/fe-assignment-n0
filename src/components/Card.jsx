@@ -1,11 +1,9 @@
 import React from "react";
-
-export default function Card(props
-
-) {
+import { Link } from "react-router-dom";
+export default function Card(props) {
   // console.log('this is from Card:')
   // console.log(props.perfumeImg  )
-  
+
   return (
     <div className="m-2 flex w-full max-w-xs flex-col rounded-lg border border-gray-100 bg-white shadow-md  ">
       <div className="relative mx-3 mt-3 flex h-40 overflow-hidden rounded-xl">
@@ -22,12 +20,14 @@ export default function Card(props
       <div className="mt-4 px-5 pb-5">
         <div className="">
           <h5 className="text-xl tracking-tight text-start text-slate-900 ">
-            {props.perfumeBrand +" "+ props.perfumeTitle}
+            {props.perfumeBrand + " " + props.perfumeTitle}
           </h5>
         </div>
         <div className="mt-2 mb-5 flex items-center justify-between">
           <p>
-            <span className="text-3xl font-bold text-slate-900">${props.perfumePrice}</span>
+            <span className="text-3xl font-bold text-slate-900">
+              ${props.perfumePrice}
+            </span>
             <span className="text-sm text-slate-900 line-through">$35</span>
           </p>
           <div class="flex items-center">
@@ -81,9 +81,12 @@ export default function Card(props
             </span>
           </div>
         </div>
-        <div className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+        <Link
+          to={`/product/${props.perfumeId}`}
+          className="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+        >
           View more
-        </div>
+        </Link>
       </div>
     </div>
   );

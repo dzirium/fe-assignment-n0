@@ -9,7 +9,7 @@ export default function () {
         </div>
         <form>
           <label
-            for="name"
+            htmlFor="name"
             className="block mb-2 text-2xl font-serif font-normal text-start "
           >
             Name:
@@ -22,8 +22,8 @@ export default function () {
             required
           ></input>
           <label
-            for="message"
-            class="block mb-2 text-2xl font-serif font-normal text-start"
+            htmlFor="message"
+            className="block mb-2 text-2xl font-serif font-normal text-start"
           >
             Your message:
           </label>
